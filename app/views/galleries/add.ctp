@@ -7,13 +7,15 @@
 <div class="galleries form">
 	<h2><?php __('Upload Photo');?></h2>
 	<?php
-		echo $form->create('Gallery', array('type' => 'file'));
-		echo $form->input('file', array('type' => 'file', 'label' => false, 'class' => 'imageUpload'));
+		echo $this->Form->create('Gallery', array('type' => 'file'));
+		echo $this->Form->input('file', array('type' => 'file', 'label' => false, 'class' => 'imageUpload'));
+		echo $this->Form->input('alternative');
+		echo $this->Form->input('group');
+		
+		echo $this->Form->button('Submit', array('type' => 'submit', 'id' => 'pxUpload'));
+		echo $this->Form->button('Clear', array('type' => 'reset', 'id' => 'pxClear'));
 		echo $form->end();
 	?>
-	<br />
-	<input type="submit" value="Upload" id="pxUpload" disabled="disabled" />
-	<input type="reset" value="Clear" id="pxClear" disabled="disabled" />
 </div>
 
 <script>
@@ -22,8 +24,22 @@
 			imageLoader: '<?php echo $html->url('/img/image_upload.gif'); ?>',
 			allowedExtension: 'jpg|jpeg|gif|png',
 			limit: 5,
-			callback: function(e) {
-				console.log( $(e).contents().find("#message").text() );
+			onFileChange: function(e, form) {
+			},
+			onFileRemove: function(e) {
+				
+			},
+			beforeUpload: function(e) {
+				
+			},
+			beforeEachUpload: function(form) {
+				
+			},
+			afterEachUpload: function(data, status, idOfText) {
+				
+			},
+			afterUpload: function(e) {
+				
 			}
 		});
 	});
