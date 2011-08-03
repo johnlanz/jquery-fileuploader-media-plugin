@@ -25,6 +25,7 @@
 			allowedExtension: 'jpg|jpeg|gif|png',
 			limit: 5,
 			onFileChange: function(e, form) {
+			
 			},
 			onFileRemove: function(e) {
 				
