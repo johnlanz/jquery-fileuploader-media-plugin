@@ -76,7 +76,7 @@
 				var formId = 'pxupload' + itr;
 				var iframeId = formId + '_frame';
 				
-				$('<iframe name="'+ iframeId +'" id="'+ iframeId +'"></iframe>').attr({
+				$('<iframe name="'+ iframeId +'"></iframe>').attr({
 					id: iframeId,
 					src: 'about:blank',
 					style: 'display:none'
