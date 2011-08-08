@@ -11,13 +11,13 @@ class Gallery extends AppModel {
 	);
 	
 	//file validation which only allowed jpeg and png to be uploaded
-	var $validate = array(
+	/*var $validate = array(
 		'file' => array(
 			'mimeType' => array(
 				'rule' => array('checkMimeType', false, array( 'image/jpeg', 'image/png'))
 			)
 		)
-	);
+	);*/
 
 }
 ?>

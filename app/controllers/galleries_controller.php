@@ -15,11 +15,12 @@ class GalleriesController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
+			
 			if ($this->Gallery->save($this->data)) {
-				$result = '<div id="output">success</div>';
-				$result .= '<div id="message">Your Message</div>';
-			}else{
-				$result = "<div id='output'>failed</div>";
+				$result = '<div id="status">success</div>';
+				$result .= '<div id="message">Successfully Uploaded</div>';
+			} else {
+				$result = "<div id='status'>error</div>";
 				$result .= '<div id="message">'. $this->Gallery->validationErrors['file'] .'</div>';
 			}
 			
@@ -27,6 +28,10 @@ class GalleriesController extends AppController {
 			$this->set('result', $result);
 			$this->render('../elements/ajax');
 		}
+	}
+	
+	function html5() {
+		$this->layout = 'html5';
 	}
 
 	function delete($id = null) {
